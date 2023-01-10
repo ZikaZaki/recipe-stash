@@ -74,7 +74,6 @@ group :test do
 end
 
 gem 'cancancan'
-gem 'capybara'
 gem 'devise'
 gem 'load_and_authorize_resource'
 gem 'rswag'
