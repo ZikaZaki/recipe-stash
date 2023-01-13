@@ -35,3 +35,57 @@
 .notification:not(:last-child) {
   margin-bottom: 0;
 }
+
+$button-color: #f76957;
+$button-hover-color: #f76957;
+$button-active-color: #f76957;
+$button-text-color: #f76957;
+$button-hover-text-color: white;
+$button-active-text-color: white;
+$button-border-color: #f76957;
+$button-hover-border-color: #f76957;
+$button-active-border-color: #f76957;
+$button-focus-border-color: #f76957;
+$button-focus-text-color: white;
+$button-focus-background-color: #f76957;
+$button-focus-box-shadow: 0 0 0 0.125em rgba(247, 105, 87, 0.25);
+
+.button.is-save {
+  background-color: transparent;
+  font-weight: bold;
+  color: $button-text-color;
+  border: 2px solid $button-border-color;
+  &:hover {
+    background-color: $button-hover-color;
+    color: $button-hover-text-color;
+    border-color: $button-hover-border-color;
+  }
+  &:active {
+    background-color: $button-active-color;
+    color: $button-active-text-color;
+    border-color: $button-active-border-color;
+  }
+  &:focus {
+    border-color: $button-focus-border-color;
+    color: $button-focus-text-color;
+    background-color: $button-focus-background-color;
+    box-shadow: $button-focus-box-shadow;
+  }
+}
+
+$table-row-hover-background-color: #983636;
+$table-cell-text-align: center;
+$table-head-background-color: #626262;
+
+.table {
+  text-align: $table-cell-text-align;
+  .thead {
+    tr {
+      th {
+        background-color: $table-head-background-color;
+        color: whitesmoke;
+        text-align: $table-cell-text-align;
+      }
+    }
+  }
+}
