@@ -42,6 +42,22 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+# Use bulma-rails to use Bulma CSS framework [https://github.com/joshuajansen/bulma-rails]
+gem 'bulma-rails', '~> 0.9.4'
+
+# Use simple_form to generate forms [https://github.com/heartcombo/simple_form]
+gem 'simple_form', '~> 5.1'
+
+# Use gravatar_image_tag to generate gravatar images [https://github.com/mdeering/gravatar_image_tag]
+gem 'gravatar_image_tag', '~> 1.2'
+
+# Use devise to manage users [https://github.com/heartcombo/devise]
+gem 'devise', '~> 4.8', '>= 4.8.1'
+
+gem 'cancancan'
+gem 'load_and_authorize_resource'
+gem 'rswag'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -64,6 +80,11 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'better_errors', '~> 2.9', '>= 2.9.1'
+  gem 'guard', '~> 2.18'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.1'
 end
 
 group :test do
@@ -73,7 +94,4 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'cancancan'
-gem 'devise'
-gem 'load_and_authorize_resource'
-gem 'rswag'
+
