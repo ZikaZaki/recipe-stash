@@ -1,37 +1,55 @@
-<%= form_with(model: food) do |form| %>
-  <% if food.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
 
-      <ul>
-        <% food.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <%= simple_form_for(@food) do |f| %>
+      <%= f.error_notification %>
+      <div class="field">
+        <div class="control">
+          <%= f.input :name,
+              label: "Name",
+              required: true,
+              autofocus: true,
+              placeholder: "food name",
+              input_html: { class: "input", autocomplete: "name" },
+              wrapper: false,
+              label_html: { class: "label" } %>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <%= f.input :measurement_unit,
+              label: "Measurement Unit",
+              required: true,
+              placeholder: "measurement unit",
+              input_html: { class: "input", autocomplete: "measurement_unit" },
+              wrapper: false,
+              label_html: { class: "label" } %>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <%= f.input :price,
+              label: "Price",
+              required: true,
+              placeholder: "price",
+              input_html: { class: "input", autocomplete: "price" },
+              wrapper: false,
+              label_html: { class: "label" } %>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <%= f.input :qty,
+              label: "Quantity",
+              required: true,
+              placeholder: "quantity",
+              input_html: { class: "input", autocomplete: "quantity" },
+              wrapper: false,
+              label_html: { class: "label" } %>
+        </div>
+      </div>
+      <div class="buttons">
+        <%= f.button :submit, "Add Food", class:"button is-save is-rounded is-normal" %>
+        <%= link_to "Back to foods", foods_path, class: "button is-link is-light is-rounded is-normal" %>
+      </div>
+    <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
 
-  <div>
-    <%= form.label :measurement_unit, style: "display: block" %>
-    <%= form.text_field :measurement_unit %>
-  </div>
-
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div>
-    <%= form.label :qty, style: "display: block" %>
-    <%= form.number_field :qty %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>

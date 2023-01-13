@@ -5,7 +5,7 @@
       <!--%= link_to 'New Food', new_food_path, class: "button  is-save is-rounded is-align-content-end" %-->
           <%= link_to new_food_path do %>
               <button 
-                class="button js-modal-trigger is-save is-rounded is-align-content-end" 
+                class="button js-modal-trigger is-save is-outlined is-rounded is-align-content-end" 
                 data-target="modal-js-example">
                 New Food
               </button>
@@ -15,74 +15,28 @@
     <div class="table-container">
       <table class="table is-bordered is-striped is-hoverable is-fullwidth">
         <thead class="thead">
-        <tr>
-          <th>Food</th>
-          <th>Measurement Unit</th>
-          <th>Unit Price</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Apple</td>
-          <td>grams</td>
-          <td>$5</td>
-          <td>
-            <%= link_to root_path do %>
-              <button class="button is-danger is-outlined is-rounded is-responsive">
-                <span><ion-icon name="trash"></ion-icon></span>
-              </button>
-            <% end %>            
-          </td>
-        </tr>
-        <tr>
-          <td>Apple</td>
-          <td>grams</td>
-          <td>$5</td>
-          <td>
-            <%= link_to root_path do %>
-              <button class="button is-danger is-outlined is-rounded is-responsive">
-                <span><ion-icon name="trash"></ion-icon></span>
-              </button>
-            <% end %>            
-          </td>
-        </tr>
-        <tr>
-          <td>Apple</td>
-          <td>grams</td>
-          <td>$5</td>
-          <td>
-            <%= link_to root_path do %>
-              <button class="button is-danger is-outlined is-rounded is-responsive">
-                <span><ion-icon name="trash"></ion-icon></span>
-              </button>
-            <% end %>            
-          </td>
-        </tr>
-        <tr>
-          <td>Apple</td>
-          <td>grams</td>
-          <td>$5</td>
-          <td>
-            <%= link_to root_path do %>
-              <button class="button is-danger is-outlined is-rounded is-responsive">
-                <span><ion-icon name="trash"></ion-icon></span>
-              </button>
-            <% end %>            
-          </td>
-        </tr>
-        <tr>
-          <td>Apple</td>
-          <td>grams</td>
-          <td>$5</td>
-          <td>
-            <%= link_to root_path do %>
-              <button class="button is-danger is-outlined is-rounded is-responsive">
-                <span><ion-icon name="trash"></ion-icon></span>
-              </button>
-            <% end %>            
-          </td>
-        </tr>
+          <tr>
+            <th>Food</th>
+            <th>Measurement Unit</th>
+            <th>Unit Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @foods.each do | food | %>
+            <tr>
+              <td><%= food.name %></td>
+              <td><%= food.measurement_unit %></td>
+              <td><%= food.name.price %></td>
+              <td>
+                <%= link_to destroy_food_path do %>
+                  <button class="button is-danger is-outlined is-rounded is-responsive">
+                    <span><ion-icon name="trash"></ion-icon></span>
+                  </button>
+                <% end %>            
+              </td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
     </div>

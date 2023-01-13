@@ -3,7 +3,8 @@ class FoodsController < ApplicationController
 
   # GET /foods or /foods.json
   def index
-    @foods = Food.all
+    @foods = Food.all.order("created_at DESC")
+    # @foods = Food.new
   end
 
   # GET /foods/1 or /foods/1.json
