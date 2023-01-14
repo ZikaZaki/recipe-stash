@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/ffi/ffi.git
+  revision: 227d1ce472ec90144249f8cf85b52d85cbab925c
+  submodules: true
+  specs:
+    ffi (1.15.5-x64-mingw-ucrt)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -111,7 +118,6 @@ GEM
       http_parser.rb (~> 0)
     erubi (1.12.0)
     eventmachine (1.2.7)
-    ffi (1.15.5-x64-mingw-ucrt)
     formatador (1.1.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -190,8 +196,8 @@ GEM
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
-    racc (1.6.2)
-    rack (2.2.5)
+    racc (1.6.1)
+    rack (2.2.4)
     rack-test (2.0.2)
       rack (>= 1.3)
     rails (7.0.4)
@@ -324,17 +330,18 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
-  better_errors (~> 2.9, >= 2.9.1)
+  better_errors
   bootsnap
   bullet
   bulma-rails (~> 0.9.4)
   cancancan
   capybara
   debug
-  devise (~> 4.8, >= 4.8.1)
+  devise
+  ffi!
   gravatar_image_tag (~> 1.2)
-  guard (~> 2.18)
-  guard-livereload (~> 2.5, >= 2.5.2)
+  guard
+  guard-livereload
   importmap-rails
   jbuilder
   load_and_authorize_resource
@@ -342,12 +349,12 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4)
   rails-controller-testing
-  rspec-rails
+  rspec-rails (~> 6.0.0)
   rswag
   selenium-webdriver
   simple_form (~> 5.1)
   spring
-  spring-watcher-listen (~> 2.1)
+  spring-watcher-listen
   sprockets-rails
   stimulus-rails
   turbo-rails

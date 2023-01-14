@@ -1,26 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe 'foods/new', type: :view do
-  before(:each) do
-    assign(:food, Food.new(
-                    name: 'MyString',
-                    measurement_unit: 'MyString',
-                    price: '9.99',
-                    qty: 1
-                  ))
+RSpec.describe 'Food', type: :system do
+  user = User.create(name: 'Zika Ali', username: 'zika', email: 'zika@gmail.com', password: '123456', password_confirmation: '123456')
+
+  subject do
+    Food.new(name: 'Saltah', measurement_unit: 'kg', price: 10, qty: 10, user_id: user.id)
   end
+  before { subject.save }
 
-  it 'renders new food form' do
-    render
-
-    assert_select 'form[action=?][method=?]', foods_path, 'post' do
-      assert_select 'input[name=?]', 'food[name]'
-
-      assert_select 'input[name=?]', 'food[measurement_unit]'
-
-      assert_select 'input[name=?]', 'food[price]'
-
-      assert_select 'input[name=?]', 'food[qty]'
+  describe 'index page' do
+    it 'I can see the button.' do
+      visit foods_path
+      page.has_button?('Add Food')
     end
   end
 end

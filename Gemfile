@@ -51,12 +51,7 @@ gem 'simple_form', '~> 5.1'
 # Use gravatar_image_tag to generate gravatar images [https://github.com/mdeering/gravatar_image_tag]
 gem 'gravatar_image_tag', '~> 1.2'
 
-# Use devise to manage users [https://github.com/heartcombo/devise]
-gem 'devise', '~> 4.8', '>= 4.8.1'
 
-gem 'cancancan'
-gem 'load_and_authorize_resource'
-gem 'rswag'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -67,29 +62,37 @@ gem 'rswag'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'rails-controller-testing'
-  gem 'rspec-rails'
+
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'bullet'
   gem 'web-console'
+
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 6.0.0'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem 'better_errors', '~> 2.9', '>= 2.9.1'
-  gem 'guard', '~> 2.18'
-  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
+  gem 'better_errors'
+  gem 'guard'
+  gem 'guard-livereload', require: false
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.1'
+  gem 'spring-watcher-listen'
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
+
+gem 'devise'
+gem 'ffi', github: 'ffi/ffi', submodules: true
+gem 'cancancan'
+gem 'load_and_authorize_resource'
+gem 'rswag'
