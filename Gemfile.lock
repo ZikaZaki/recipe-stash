@@ -1,10 +1,3 @@
-GIT
-  remote: https://github.com/ffi/ffi.git
-  revision: 227d1ce472ec90144249f8cf85b52d85cbab925c
-  submodules: true
-  specs:
-    ffi (1.15.5-x64-mingw-ucrt)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -118,6 +111,8 @@ GEM
       http_parser.rb (~> 0)
     erubi (1.12.0)
     eventmachine (1.2.7)
+    ffi (1.15.5)
+    ffi (1.15.5-x64-mingw-ucrt)
     formatador (1.1.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -185,10 +180,13 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.10-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.13.10-x86_64-linux)
+      racc (~> 1.4)
     notiffany (0.1.3)
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
+    pg (1.4.5)
     pg (1.4.5-x64-mingw-ucrt)
     pry (0.14.2)
       coderay (~> 1.1)
@@ -328,17 +326,17 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   better_errors
   bootsnap
   bullet
-  bulma-rails (~> 0.9.4)
+  bulma-rails
   cancancan
   capybara
   debug
   devise
-  ffi!
   gravatar_image_tag (~> 1.2)
   guard
   guard-livereload
@@ -363,7 +361,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.1.3p185
+   ruby 3.1.2p20
 
 BUNDLED WITH
    2.3.26
