@@ -22,7 +22,7 @@ class RecipeFoodController < ApplicationController
       redirect_back(fallback_location: root_path)
     end
   end
-  
+
   private
 
   def ingredient_params
