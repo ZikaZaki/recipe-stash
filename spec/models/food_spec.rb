@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Food, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
   before :all do
-    @user = User.new(name: 'test', username: 'test', email: 'test@test.com', password: '123456', password_confirmation: '123456')
+    @user = User.new(name: 'test', username: 'test', email: 'test@test.com', password: '123456',
+                     password_confirmation: '123456')
     @food = Food.new(name: 'test', measurement_unit: 'test', qty: 1, price: 10, user_id: @user.id)
   end
 
