@@ -4,8 +4,8 @@ class FoodsController < ApplicationController
 
   # GET /foods or /foods.json
   def index
-    @foods = Food.all.order('created_at DESC')
-    # @foods = Food.new
+    @foods = Food.all.order('created_at ASC')
+    @food = Food.new
   end
 
   # GET /foods/1 or /foods/1.json
@@ -13,7 +13,7 @@ class FoodsController < ApplicationController
 
   # GET /foods/new
   def new
-    @food = Food.new
+    @food = current_user.foods.build
   end
 
   # GET /foods/1/edit
@@ -21,7 +21,7 @@ class FoodsController < ApplicationController
 
   # POST /foods or /foods.json
   def create
-    @food = Food.new(food_params)
+    @food = current_user.foods.build(food_params)
 
     respond_to do |format|
       if @food.save
