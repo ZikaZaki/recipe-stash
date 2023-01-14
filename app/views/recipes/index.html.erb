@@ -1,51 +1,48 @@
 <section class="section">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-half">
-          <article class="media box">
-              <div class="field is-grouped is-justify-content-right">
-                <p class="control">
-                  <!--%= link_to 'New Food', new_food_path, class: "button  is-save is-rounded is-align-content-end" %-->
-                  <%= link_to new_recipe_path do %>
-                      <button 
-                        class="button js-modal-trigger is-save is-outlined is-rounded is-align-content-end" 
-                        data-target="modal-js-example">
-                        New Recipe
-                      </button>
-                  <% end %>  
-                </p>
-              </div>
-          </article>
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-half">
+                <div class="field is-grouped is-justify-content-right">
+                    <p class="control">
+                        <%= link_to new_recipe_path do %>
+                            <button 
+                            class="button js-modal-trigger is-save is-outlined is-rounded is-align-content-end" 
+                            data-target="modal-js-example">
+                            New Recipe
+                            </button>
+                        <% end %>  
+                    </p>
+                </div>
 
-      <% @recipes.each do | recipe | %>
-          <div class="box">
-              <article class="media">
-                  <div class="media-left">
-                      <figure class="image is-64x64">
-                          <img src="https://via.placeholder.com/64.png">
-                      </figure>
-                  </div>
-                  <div class="media-content">
-                      <div class="content">
-                          <strong><%= recipe.name %></strong><br />
-                          <p><%= recipe.description %></p>
-                      </div>
-                      <nav class="level">
-                          <div class="level-left is-mobile">
-                              <%= link_to recipe, class: "level-item" do %>
-                                  <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
-                              <% end %>
-                              <%= link_to recipe, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure you wnat to delete this recipe?' }, class: "level-item" do %>
-                                  <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
-                              <% end %>
-                          </div>
-                      </nav>
-                  </div>
-              </article>
-          </div>
-      <% end %>
-      </div>
+                <% @recipes.each do | recipe | %>
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-left">
+                                <figure class="image is-64x64">
+                                    <img src="https://via.placeholder.com/64.png">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <strong><%= recipe.name %></strong><br />
+                                    <p><%= recipe.description %></p>
+                                </div>
+                                <nav class="level">
+                                    <div class="level-left is-mobile">
+                                        <%= link_to recipe, class: "level-item" do %>
+                                            <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
+                                        <% end %>
+                                        <%= link_to recipe, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure you wnat to delete this recipe?' }, class: "level-item" do %>
+                                            <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                                        <% end %>
+                                    </div>
+                                </nav>
+                            </div>
+                        </article>
+                    </div>
+                <% end %>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
