@@ -2,19 +2,21 @@
     <div class="container">
         <div class="columns is-centered">
             <div class="column is-half">
-                <div class="field is-grouped is-justify-content-right">
-                    <p class="control">
-                        <%= link_to new_recipe_path do %>
-                            <button 
-                            class="button js-modal-trigger is-save is-outlined is-rounded is-align-content-end" 
-                            data-target="modal-js-example">
-                            New Recipe
-                            </button>
-                        <% end %>  
-                    </p>
-                </div>
+                <% if user_signed_in? %>
+                    <div class="field is-grouped is-justify-content-right">
+                        <p class="control">
+                            <%= link_to new_recipe_path do %>
+                                <button 
+                                class="button js-modal-trigger is-save is-outlined is-rounded is-align-content-end" 
+                                data-target="modal-js-example">
+                                New Recipe
+                                </button>
+                            <% end %>  
+                        </p>
+                    </div>
+                <% end %> 
 
-                <% @recipes.each do | recipe | %>
+                <% @public_recipes.each do | recipe | %>
                     <div class="box">
                         <article class="media">
                             <div class="media-left">
@@ -26,9 +28,12 @@
                                 <div class="content">
                                     <strong><%= recipe.name %></strong><br />
                                     <p><%= recipe.description %></p>
+                                    <small>By: @<%= recipe.user.username %></small><br />
                                 </div>
+                                <% if user_signed_in? %>
                                 <nav class="level">
                                     <div class="level-left is-mobile">
+                                        
                                         <%= link_to recipe, class: "level-item" do %>
                                             <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
                                         <% end %>
@@ -37,6 +42,7 @@
                                         <% end %>
                                     </div>
                                 </nav>
+                                <% end %>  
                             </div>
                         </article>
                     </div>
