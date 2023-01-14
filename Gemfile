@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.3'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
@@ -43,7 +43,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 # Use bulma-rails to use Bulma CSS framework [https://github.com/joshuajansen/bulma-rails]
-gem 'bulma-rails', '~> 0.9.4'
+gem 'bulma-rails'
 
 # Use simple_form to generate forms [https://github.com/heartcombo/simple_form]
 gem 'simple_form', '~> 5.1'
@@ -90,6 +90,5 @@ end
 
 gem 'cancancan'
 gem 'devise'
-gem 'ffi', github: 'ffi/ffi', submodules: true
 gem 'load_and_authorize_resource'
 gem 'rswag'
