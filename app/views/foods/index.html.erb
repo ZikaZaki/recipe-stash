@@ -29,7 +29,7 @@
               <td><%= food.measurement_unit %></td>
               <td>$<%= food.price %></td>
               <td>
-                <%= link_to food, method: :delete, data: { confirm: "Are you sure you want to delete this tweet?" }, class: "level-item" do %>
+                <%= link_to food, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this food?' }, class: "level-item" do %>
                   <button class="button is-danger is-outlined is-rounded is-responsive">
                     <span><ion-icon name="trash"></ion-icon></span>
                   </button>
