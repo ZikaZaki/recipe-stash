@@ -2,7 +2,6 @@
   <div class="container">
     <div class="field is-grouped is-justify-content-right">
       <p class="control">
-      <!--%= link_to 'New Food', new_food_path, class: "button  is-save is-rounded is-align-content-end" %-->
           <%= link_to new_food_path do %>
               <button 
                 class="button js-modal-trigger is-save is-outlined is-rounded is-align-content-end" 
@@ -29,11 +28,13 @@
               <td><%= food.measurement_unit %></td>
               <td>$<%= food.price %></td>
               <td>
-                <%= link_to food, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this food?' }, class: "level-item" do %>
-                  <button class="button is-danger is-outlined is-rounded is-responsive">
-                    <span><ion-icon name="trash"></ion-icon></span>
-                  </button>
-                <% end %>            
+                <% if can? :destroy, food %>
+                  <%= link_to food, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this food?' }, class: "level-item" do %>
+                    <button class="button is-danger is-outlined is-rounded is-responsive">
+                      <span><ion-icon name="trash"></ion-icon></span>
+                    </button>
+                  <% end %>
+                <% end %>
               </td>
             </tr>
           <% end %>

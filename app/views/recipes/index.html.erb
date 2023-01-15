@@ -13,33 +13,34 @@
                         <% end %>  
                     </p>
                 </div>
-
                 <% @recipes.each do | recipe | %>
-                    <div class="box">
-                        <article class="media">
-                            <div class="media-left">
-                                <figure class="image is-64x64">
-                                    <img src="https://via.placeholder.com/64.png">
-                                </figure>
-                            </div>
-                            <div class="media-content">
-                                <div class="content">
-                                    <strong><%= recipe.name %></strong><br />
-                                    <p><%= recipe.description %></p>
+                    <% if can? :manage, recipe %>
+                        <div class="box">
+                            <article class="media">
+                                <div class="media-left">
+                                    <figure class="image is-64x64">
+                                        <img src="https://via.placeholder.com/64.png">
+                                    </figure>
                                 </div>
-                                <nav class="level">
-                                    <div class="level-left is-mobile">
-                                        <%= link_to recipe, class: "level-item" do %>
-                                            <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
-                                        <% end %>
-                                        <%= link_to recipe, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure you wnat to delete this recipe?' }, class: "level-item" do %>
-                                            <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
-                                        <% end %>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <strong><%= recipe.name %></strong><br />
+                                        <p><%= recipe.description %></p>
                                     </div>
-                                </nav>
-                            </div>
-                        </article>
-                    </div>
+                                    <nav class="level">
+                                        <div class="level-left is-mobile">
+                                            <%= link_to recipe, class: "level-item" do %>
+                                                <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
+                                            <% end %>
+                                            <%= link_to recipe, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure you wnat to delete this recipe?' }, class: "level-item" do %>
+                                                <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                                            <% end %>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </article>
+                        </div>
+                    <% end %>
                 <% end %>
             </div>
         </div>

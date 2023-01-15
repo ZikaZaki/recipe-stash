@@ -1,4 +1,7 @@
 class RecipeFoodController < ApplicationController
+  before_action :set_recipe_food, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[index show public_recipes]
+
   # GET /recipe_food or /recipe_food.json
   def index
     @recipe_foods = RecipeFood.all
