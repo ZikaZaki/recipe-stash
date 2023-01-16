@@ -20,7 +20,7 @@
         <nav class="level">
           <% if can? :manage, recipe %>
             <div class="level-left is-mobile">
-                <%= link_to recipe, class: "level-item" do %>
+                <%= link_to shopping_list_path(current_user.id), method: :get, class: "level-item" do %>
                   <button class="button is-save is-outlined is-rounded is-responsive">Generate shopping list</button>
                 <% end %>
             </div>
@@ -57,8 +57,8 @@
       <tbody>
         <% recipe.recipe_foods.includes([:food]).each do | recipe_food | %>
           <tr>
-            <td><%= recipe_food.food.name %> <%= recipe_food.food.measurement_unit %></td>
-            <td><%= recipe_food.qty %></td>
+            <td><%= recipe_food.food.name %></td>
+            <td><%= recipe_food.qty %> <%= recipe_food.food.measurement_unit %></td>
             <td>$<%= recipe_food.qty*recipe_food.food.price%></td>
             <td>
               <% if can? :manage, @recipe %>

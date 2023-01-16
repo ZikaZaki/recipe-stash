@@ -4,12 +4,16 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    @recipes = Recipe.all.order('created_at ASC')
+    @recipes = current_user.recipes.order('created_at ASC')
     @recipe = Recipe.new
   end
 
   def public_recipes
     @public_recipes = Recipe.where(public: true)
+  end
+
+  def generate_shopping_list
+    @recipe_foods = RecipeFood.includes(:food).select { |item| item.food.user_id == current_user.id }
   end
 
   # GET /recipes/1 or /recipes/1.json

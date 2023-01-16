@@ -1,0 +1,51 @@
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-half">
+                <div class="is-flex is-justify-content-center">
+                    <p><h2 class="title is-2">Shopping List</h2></p>
+                </div>
+                <div class="box">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <% sum = 0%>
+                                <% count = 0%>
+                                <% @recipe_foods.each do |item| %>
+                                    <% sum += item.qty * item.food.price %>
+                                    <% count += 1 %>
+                                <% end %>
+                                <p class="is-flex is-justify-content-space-between">
+                                    <strong>Amount of food items to buy: <%= count %></strong>
+                                    <strong>Total value of food needed: $<%= sum %></strong>
+                                </p>
+                            </div>
+                            <br />
+                        </div>
+                    </article>
+                </div>
+                <hr />
+                <div class="table-container">
+                    <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+                        <thead class="thead">
+                            <tr>
+                                <th>Food</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @recipe_foods.each do | recipe_food | %>
+                                <tr>
+                                <td><%= recipe_food.food.name %></td>
+                                <td><%= recipe_food.qty %> <%= recipe_food.food.measurement_unit %></td>
+                                <td>$<%= recipe_food.qty*recipe_food.food.price%></td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

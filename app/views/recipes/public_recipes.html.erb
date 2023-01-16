@@ -30,10 +30,9 @@
                                     <p><%= recipe.description %></p>
                                     <small>By: @<%= recipe.user.username %></small><br />
                                 </div>
-                                <% if user_signed_in? %>
+                                <% if can? :manage, recipe %>
                                 <nav class="level">
                                     <div class="level-left is-mobile">
-                                        
                                         <%= link_to recipe, class: "level-item" do %>
                                             <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
                                         <% end %>
