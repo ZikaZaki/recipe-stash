@@ -1,0 +1,37 @@
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <h2 class="title is-2">New Ingredient</h2>
+                <%= simple_form_for([@recipe, @recipe_food])  do |f| %>
+                   <%= f.error_notification %>
+                   <span><%=f.label "Food", class: "label", required: true %></span>
+                    <div class="field select is-link is-fullwidth">
+                        <div class="control">
+                            <%= f.select :food_id, @foods.map { |food| [food.name, food.id] }, 
+                                label: "Food",
+                                input_html: { class: "input" },
+                                required: true,
+                                wrapper: false,
+                                label_html: { class: "label" } %>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <%= f.input :qty,
+                                label: "Quantity",
+                                required: true,
+                                input_html: { class: "input", autocomplete: "qty" },
+                                wrapper: false,
+                                label_html: { class: "label" } %>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <%= f.button :submit, "Add Ingredient", class:"button is-save is-rounded is-normal" %>
+                        <%= link_to "Back to Recipe", :back, class: "button is-link is-light is-rounded is-normal" %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
