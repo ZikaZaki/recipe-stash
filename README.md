@@ -1,36 +1,10 @@
 <a name="readme-top"></a>
 
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-OPTIONAL SECTIONS:
-- FAQ
-
-After you're finished please remove all the comments and instructions!
--->
-
 <div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
   <img src="recipestash-logo.png" alt="logo" width="720"  height="auto" />
   <br/>
 
-  <h3><b>RecipeStash</b></h3>
+  <h3><b>Recipe-Stash</b></h3>
 
 </div>
 
@@ -59,11 +33,9 @@ After you're finished please remove all the comments and instructions!
   - [❓ FAQ (OPTIONAL) ](#-faq-optional-)
   - [📝 License ](#-license-)
 
-<!-- PROJECT DESCRIPTION -->
+# 📖 Recipe-Stash <a name="about-project"></a>
 
-# 📖 RecipeStash <a name="about-project"></a>
-
-The **RecipeStash** app keeps track of all recipes, ingredients, and inventory. It allows users to save ingredients, keep track of what they have, create recipes, and generate a shopping list based on what they have and what they are missing from a recipe. Also, the app enables users to make their recipes public so anyone can access them.
+The **Recipe-Stash** app keeps track of all recipes, ingredients, and inventory. It allows users to save ingredients, keep track of what they have, create recipes, and generate a shopping list based on what they have and what they are missing from a recipe. Also, the app enables users to make their recipes public so anyone can access them.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -81,7 +53,7 @@ The **RecipeStash** app keeps track of all recipes, ingredients, and inventory. 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
@@ -91,8 +63,6 @@ The **RecipeStash** app keeps track of all recipes, ingredients, and inventory. 
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
 </details>
-
-<!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
@@ -105,8 +75,6 @@ The **RecipeStash** app keeps track of all recipes, ingredients, and inventory. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
-
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 > Add a link to your deployed project.
@@ -114,8 +82,6 @@ The **RecipeStash** app keeps track of all recipes, ingredients, and inventory. 
 - [Live Demo Link](https://yourdeployedapplicationlink.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -199,8 +165,6 @@ Example:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHORS -->
-
 ## 👥 Authors <a name="authors"></a>
 
 > Mention all of the collaborators of this project.
@@ -219,8 +183,6 @@ Example:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FUTURE FEATURES -->
-
 ## 🔭 Future Features <a name="future-features"></a>
 
 > Describe 1 - 3 features you will add to the project.
@@ -230,8 +192,6 @@ Example:
 - [ ] **[Add User Picture]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -282,7 +242,5 @@ I would like to thank...
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
